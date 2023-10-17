@@ -1,0 +1,25 @@
+---
+import { type CollectionEntry } from "astro:content";
+import { marked } from "marked";
+import BlogPost from "../../layouts/BlogPost.astro";
+import { getCombinedPosts } from "../../utils/getPosts";
+
+export async function getStaticPaths() {
+	const combinedPosts = await getCombinedPosts();
+
+	return combinedPosts.map((post) => ({
+		params: { slug: post.slug },
+		props: post,
+	}));
+}
+
+type Props = CollectionEntry<"blog">;
+const post = Astro.props;
+
+// Convert markdown from text format to HTML
+const content = marked.parse(post.data.body);
+---
+
+<BlogPost {...post.data}>
+	<article set:html={content} class="prose" />
+</BlogPost>
