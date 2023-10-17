@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "restaurants",
+  "info": {
+    "singularName": "restaurant",
+    "pluralName": "restaurants",
+    "displayName": "Restaurant",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "default": "Default Blog Title"
+    },
+    "BlogContent": {
+      "type": "richtext",
+      "default": "#Default Blog Heading - Content",
+      "required": true
+    },
+    "Description": {
+      "type": "text",
+      "required": true,
+      "unique": false,
+      "default": "Default Blog Description"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
