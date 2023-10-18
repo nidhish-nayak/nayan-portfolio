@@ -6,7 +6,10 @@ export const getCombinedPosts = async () => {
 		getOnlinePosts(),
 		getOfflinePosts(),
 	]);
-	const combinedPosts = [...onlinePosts, ...offlinePosts];
+
+	const combinedPosts = onlinePosts
+		? [...onlinePosts, ...offlinePosts]
+		: [...offlinePosts];
 
 	// Sorting in descending order on pubDate
 	combinedPosts.sort(

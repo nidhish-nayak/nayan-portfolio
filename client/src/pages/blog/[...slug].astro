@@ -20,7 +20,6 @@ const content = marked.parse(post.data.body);
 <BlogPost {...post.data}>
 	<article
 		set:html={content}
-		class="prose md:prose-lg lg:prose-xl xl:prose-2xl dark:prose-invert"
+		class="prose md:prose-lg lg:prose-xl xl:prose-2xl"
 	/>
 </BlogPost>
- ../../api/getArticles/getCombinedPosts
