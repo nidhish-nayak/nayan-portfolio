@@ -2,7 +2,7 @@
 import { type CollectionEntry } from "astro:content";
 import { marked } from "marked";
 import BlogPost from "../../layouts/BlogPost.astro";
-import { getCombinedPosts } from "../../utils/getPosts";
+import { getCombinedPosts } from "../../utils/getCombinedPosts";
 
 export async function getStaticPaths() {
 	const combinedPosts = await getCombinedPosts();
@@ -23,3 +23,4 @@ const content = marked.parse(post.data.body);
 <BlogPost {...post.data}>
 	<article set:html={content} class="prose" />
 </BlogPost>
+ ../../utils/getCombinedPosts

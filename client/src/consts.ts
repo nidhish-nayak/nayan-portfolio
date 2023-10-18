@@ -5,5 +5,9 @@ export const SITE_TITLE = "Astro Blog";
 export const SITE_DESCRIPTION = "Welcome to my website!";
 
 export const STRAPI_CONFIG = {
-	endpoint: "restaurants",
+	strapiURL: import.meta.env.STRAPI_URL,
+	endpoints: {
+		blog: "restaurants",
+		project: "projects",
+	},
 };

@@ -3,10 +3,10 @@ export default interface Article {
 	attributes: {
 		Title: string;
 		Description: string;
-		BlogContent: any;
-		Image: string;
+		BlogContent: string;
 		createdAt: string;
 		updatedAt: string;
 		publishedAt: string;
+		Image?: any;
 	};
 }

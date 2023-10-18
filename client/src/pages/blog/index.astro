@@ -4,7 +4,7 @@ import Footer from "../../components/Footer.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
 import Header from "../../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
-import { getCombinedPosts } from "../../utils/getPosts";
+import { getCombinedPosts } from "../../utils/getCombinedPosts";
 
 const combinedPosts = await getCombinedPosts();
 ---
@@ -111,4 +111,5 @@ const combinedPosts = await getCombinedPosts();
 		</main>
 		<Footer />
 	</body>
+	 ../../utils/getCombinedPosts
 </html>
