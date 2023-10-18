@@ -1,6 +1,6 @@
 import { getCollection } from "astro:content";
 
-import type { OfflinePost } from "../interfaces/Post";
+import type { OfflinePost } from "../../interfaces/Post";
 
 export const getOfflinePosts = async (): Promise<OfflinePost[]> => {
 	const posts = (await getCollection("blog")).sort(

@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "restaurants",
+  "collectionName": "projects",
   "info": {
-    "singularName": "restaurant",
-    "pluralName": "restaurants",
-    "displayName": "Restaurant",
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Projects",
     "description": ""
   },
   "options": {
@@ -15,30 +15,30 @@
     "Title": {
       "type": "string",
       "required": true,
-      "unique": true,
-      "default": "Default Blog Title"
-    },
-    "BlogContent": {
-      "type": "richtext",
-      "default": "#Default Blog Heading - Content",
-      "required": true
+      "default": "Default title",
+      "minLength": 3
     },
     "Description": {
       "type": "text",
+      "default": "Default description",
       "required": true,
-      "unique": false,
-      "default": "Default Blog Description"
+      "minLength": 5
     },
     "Image": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
       ]
+    },
+    "ProjectContent": {
+      "type": "richtext",
+      "default": "Default Project Details",
+      "required": true
     }
   }
 }

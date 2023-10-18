@@ -7,7 +7,7 @@ export const SITE_DESCRIPTION = "Welcome to my website!";
 export const STRAPI_CONFIG = {
 	strapiURL: import.meta.env.STRAPI_URL,
 	endpoints: {
-		blog: "restaurants",
+		blog: "articles",
 		project: "projects",
 	},
 };

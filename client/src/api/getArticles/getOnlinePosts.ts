@@ -1,9 +1,9 @@
-import { STRAPI_CONFIG } from "../consts";
-import fetchApi from "../lib/strapi";
+import { STRAPI_CONFIG } from "../../consts";
+import fetchApi from "../../lib/strapi";
 import { getImageLink } from "./getImageLink";
 
-import type Article from "../interfaces/Article";
-import type { OnlinePost } from "../interfaces/Post";
+import type Article from "../../interfaces/Article";
+import type { OnlinePost } from "../../interfaces/Post";
 
 export const getOnlinePosts = async (): Promise<OnlinePost[]> => {
 	const posts = await fetchApi<Article[]>({

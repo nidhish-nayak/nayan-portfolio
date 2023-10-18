@@ -1,8 +1,7 @@
 ---
-import { type CollectionEntry } from "astro:content";
 import { marked } from "marked";
+import { getCombinedPosts } from "../../api/getArticles/getCombinedPosts";
 import BlogPost from "../../layouts/BlogPost.astro";
-import { getCombinedPosts } from "../../utils/getCombinedPosts";
 
 export async function getStaticPaths() {
 	const combinedPosts = await getCombinedPosts();
@@ -13,14 +12,15 @@ export async function getStaticPaths() {
 	}));
 }
 
-type Props = CollectionEntry<"blog">;
-const post = Astro.props;
-
 // Convert markdown from text format to HTML
+const post = Astro.props;
 const content = marked.parse(post.data.body);
 ---
 
 <BlogPost {...post.data}>
-	<article set:html={content} class="prose" />
+	<article
+		set:html={content}
+		class="prose md:prose-lg lg:prose-xl xl:prose-2xl dark:prose-invert"
+	/>
 </BlogPost>
- ../../utils/getCombinedPosts
+ ../../api/getArticles/getCombinedPosts

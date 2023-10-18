@@ -1,7 +1,7 @@
-import { STRAPI_CONFIG } from "../consts";
-import fetchApi from "../lib/strapi";
+import { STRAPI_CONFIG } from "../../consts";
+import fetchApi from "../../lib/strapi";
 
-import type Article from "../interfaces/Article";
+import type Article from "../../interfaces/Article";
 
 export const getImageLink = async (index: number): Promise<string> => {
 	const blogData: Article[] = await fetchApi({
