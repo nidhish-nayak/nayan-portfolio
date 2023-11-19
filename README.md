@@ -2,6 +2,33 @@
 
 Welcome to our Fullstack Blog Application! This project is built with [Astro 3.0](https://astro.build/) on the front-end and [Strapi CMS](https://strapi.io/) on the back-end. It allows you to create, manage, and publish blog content with ease.
 
+## Project Structure
+
+- **Server:** Contains the Strapi CMS configuration and models.
+
+```
+├── public/             # Public assets and HTML template
+├── src/
+│   ├── api/            # Articles and project apis
+│   ├── types/          # Global types
+│   ├── content/        # Admin dashboard config
+└── ...
+```
+
+- **Client:** Houses the Astro 3.0 frontend code and components.
+
+```
+├── public/             # Public assets and HTML template
+├── src/
+│   ├── api/            # All functions handling getPosts
+│   ├── components/     # Reusable Astro components
+│   ├── content/        # Blog Content
+│   ├── layouts/        # Reusable layouts for posts
+│   ├── pages/          # Top-level application pages
+│   └── styles/         # Global CSS styles
+└── ...
+```
+
 ## Features
 
 - **Astro 3.0 Frontend:** Utilize the power of Astro 3.0 to build a fast, static site with dynamic features.
@@ -29,8 +56,8 @@ cd server
 Install dependencies and run Strapi:
 
 ```bash
-npm install
-npm run develop
+yarn install
+yarn run develop
 ```
 
 Follow the on-screen instructions to set up your Strapi CMS. Once done, you can access the Strapi admin panel at `http://localhost:1337/admin`.
@@ -46,7 +73,7 @@ cd ../client
 Install dependencies:
 
 ```bash
-npm install
+pnpm install
 ```
 
 Create a `.env` file in the `client` directory and add the following:
@@ -62,7 +89,7 @@ Update the URL if your Strapi instance is running on a different port or domain.
 Start the Astro development server:
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 Open your browser and go to `http://localhost:3000` to view the blog application.
@@ -72,41 +99,22 @@ Open your browser and go to `http://localhost:3000` to view the blog application
 - Explore the Strapi admin panel to create blog posts, categories, and manage users.
 - Customize the Astro frontend by modifying components in the `src` directory.
 
-## Project Structure
-
-- **backend:** Contains the Strapi CMS configuration and models.
-  - `config/`: Strapi configuration files.
-  - `api/`: API configurations and routes.
-  - ...
-
-- **frontend:** Houses the Astro 3.0 frontend code and components.
-  - `src/`: Main source code.
-    - `layouts/`: Layout components.
-    - `components/`: Reusable components.
-    - `pages/`: Individual page components.
-    - ...
-
 - **shared:** Shared code or utilities that may be used by both the frontend and backend.
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-- **Backend:**
+| **Backend:**       |                                |
+| ------------------ | ------------------------------ |
+| `cd server`        | Change to backend directory    |
+| `yarn install`     | Install backend dependencies   |
+| `yarn run develop` | Run Strapi in development mode |
 
-  ```bash
-  cd server
-  npm install       # Install backend dependencies
-  npm run develop   # Run Strapi in development mode
-  ```
-
-- **Frontend:**
-
-  ```bash
-  cd client
-  npm install       # Install frontend dependencies
-  npm run dev       # Run Astro in development mode
-  ```
+| **Frontend:**  |                               |
+| -------------- | ----------------------------- |
+| `cd client`    | Change to frontend directory  |
+| `pnpm install` | Install frontend dependencies |
 
 ## Deployment
 
